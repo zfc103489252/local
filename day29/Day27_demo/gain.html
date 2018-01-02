@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>访问获取信息</title>
+    <script src="web/js/jquery-3.2.1.min.js"></script>
+</head>
+<body>
+    <!--<button id="but">点击获取信息</button>-->
+    <!--<table border="1">-->
+
+    <!--</table>-->
+</body>
+<script type="text/javascript">
+    $('#but').click(function () {
+        $.get("http://localhost:8080/json",function () {
+            if (status == "success"){
+//                console.log(data);
+                //使用parseJSON方法 将data数据解析成JS中的json对象
+                var jsonData = $.parseJSON(data);
+                console.log(jsonData[0]['gender']);
+                if (jsonData != null) {
+                    $('table').append($('<tr>')
+                        .append($('<td>').text("昵称")
+                        )
+                        .append($('<td>').text("性别")
+                        )
+                        .append($('<td>').text("年龄")
+                        )
+                    )
+                    //第一个参数index：当前元素的角标 第二个参数data：当前元素
+                    $.each(jsonData, function (index, obj) {
+                        console.log(index);
+                        console.log(obj);
+                        $('table')
+                            .append($('<tr>')
+                                .append($('<td>').text(obj['username']))
+                                .append($('<td>').text(obj['gender']))
+                                .append($('<td>').text(obj['age'])))
+                    })
+                }
+            }
+        })
+    })
+</script>
+</html>
