@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>主页</title>
+    <script src="js/jquery-3.2.1.min.js"></script>
+</head>
+<body>
+    <h1>主页</h1>
+    <button id="btn">点击获取信息</button>
+</body>
+<script type="text/javascript">
+    $('#btn').click(function () {
+        $('table tr').remove();
+        $.get("http://localhost:8080/find",function (JsonData,status) {
+            console.log(status);
+            if (status == "success"){
+                $('table').append(
+                    $('<tr>').append(
+                        $('<th>').text("姓名")
+                    ).append(
+                        $('<th>').text("密码")
+                    )
+                );
+                var parseJSON = $.parseJSON(JsonData);
+                $.each(parseJSON,function (index,obj) {
+                    $('table').append(
+                        $("<tr>").append(
+                            $('<td>').text(obj['username'])
+                        ).append(
+                            $('<td>').text(obj['password'])
+                        )
+                    )
+                })
+            }
+        })
+    })
+</script>
+</html>

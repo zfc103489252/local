@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>注册</title>
+    <style type="text/css">
+        body{
+            background-color: #f4f8fb;
+            text-align:center;
+            margin: 0;
+        }
+
+        .db{
+            height: 70px;
+            background-color: white;
+        }
+        .db1{
+            width: 1180px;
+            height: 70px;
+            margin: auto;
+        }
+        .db2{
+            width: 150px;
+            height: 70px;
+            float: left;
+            margin-right: 10px;
+        }
+        .db3{
+            width: 50px;
+            height: 70px;
+            float: left;
+        }
+        .contained{
+            margin: 100px auto;
+            width: 1200px;
+            height: 800px;
+            background-color: white;
+        }
+        .content{
+            width: 550px;
+            margin: 50px auto;
+            height: 600px;
+            position: relative;
+        }
+        .content-head{
+            font-size: 18px;
+            height: 140px;
+            margin-bottom: 30px;
+        }
+        .content-head img{
+            display: block;
+            margin-left: 30%;
+            width: 40px;
+            height: 40px;
+            margin-top: 100px;
+            float: left;
+        }
+        .content-head h1{
+            line-height: 40px;
+            margin-top: 100px;
+            float: left;
+        }
+        label[for="password"],[for="adress"]{
+            font-size: 18px;
+            text-align: center;
+            line-height: 100px;
+            height: 50px;
+            margin-top: 20px;
+            display: block;
+            float: left;
+            width: 25%;
+        }
+        input[type="submit"],[type="text"],[type="password"]{
+            margin-top: 40px;
+            display: block;
+            float: left;
+            padding-left: 2%;
+            width: 72%;
+            height: 50px;
+            font-size: 20px;
+        }
+        input[type="checkbox"]{
+            display: block;
+            float: left;
+            margin-left: 25%;
+            margin-top: 40px;
+            margin-bottom: 10px;
+        }
+        label[for="agree"]{
+            display: block;
+            float: left;
+            margin-top: 35px;
+            margin-bottom: 10px;
+        }
+        .eye{
+            display: block;
+            width: 40px;
+            height: 40px;
+            background-size: 100% 100%;
+            position: absolute;
+            top: 315px;
+            left: 500px;
+        }
+        .exc{
+            display: block;
+            width: 100px;
+            height: 40px;
+            background-size: 100% 100%;
+            position: absolute;
+            top: 215px;
+            left: 550px;
+        }
+
+    </style>
+</head>
+<body>
+<div class="db">
+    <div class="db1">
+        <div class="db2">
+            <img src="img/logo@2x.png"  style="width:150px; height:40px;margin-top:15px"  >
+        </div>
+        <div class="db3">
+            <div style="width: 100px;height: 30px;margin-top: 25px;font-size: 20px">
+                账号注册
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<div class="contained">
+    <form action="/register" method="post" class="content">
+        <div class="content-head">
+            <img src="img/邮箱.png" alt="" >
+            <h1>邮箱号注册</h1>
+        </div>
+
+        <label for="adress">邮箱地址</label>
+        <input type="text" id="adress" name="username" placeholder="邮箱地址" onfocus="inputFocus(this)" onblur="inputBlur()">
+        <span  id="s1" class="exc" style="display: none">请按邮箱格式输入</span><br>
+        <label for="password">登录密码</label>
+        <input type="password" id="password" name="password" placeholder="登录密码">
+        <span class="eye"></span>
+        <input type="checkbox" id="agree" name="agree">
+        <label for="agree">同意并遵守 <a href="">《服务条款》</a></label>
+        <input id="z1" type="submit" value="下一步" style="margin-left: 25%;background-color: #505fe6;color: #f5e1ff;border: 0px" onfocus="inputFocus1(this)">
+    </form>
+</div>
+</div>
+</body>
+    <script type="text/javascript">
+        function inputFocus() {
+            var s = document.getElementById("s1");
+            s.style.display = "block";
+            s.style.color = "red";
+        }
+        function inputBlur() {
+            var s2 = document.getElementById("s1");
+            s2.style.display = "none"
+        }
+        function inputFocus1() {
+            var z = document.getElementById("z1");
+            z.style.backgroundColor = "red";
+        }
+    </script>
+</html>
