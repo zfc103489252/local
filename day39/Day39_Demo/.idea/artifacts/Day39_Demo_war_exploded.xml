@@ -1,0 +1,22 @@
+<component name="ArtifactManager">
+  <artifact type="exploded-war" name="Day39_Demo:war exploded">
+    <output-path>$PROJECT_DIR$/out/artifacts/Day39_Demo_war_exploded</output-path>
+    <root id="root">
+      <element id="javaee-facet-resources" facet="Day39_Demo/web/Web" />
+      <element id="directory" name="WEB-INF">
+        <element id="directory" name="classes">
+          <element id="module-output" name="Day39_Demo" />
+        </element>
+        <element id="directory" name="lib">
+          <element id="library" level="project" name="Struts 2" />
+          <element id="library" level="project" name="standard" />
+          <element id="library" level="project" name="mchange-commons-java-0.2.3.4" />
+          <element id="library" level="project" name="commons-dbutils-1.6" />
+          <element id="library" level="project" name="mysql-connector-java-5.1.18-bin" />
+          <element id="library" level="project" name="commons-beanutils-1.8.3" />
+          <element id="library" level="project" name="commons-collections-3.2.1" />
+        </element>
+      </element>
+    </root>
+  </artifact>
+</component>
